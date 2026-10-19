@@ -1,0 +1,93 @@
+{
+  "name": "react-native-nitro-qq",
+  "version": "0.1.0",
+  "description": "QQ login and sharing for React Native, powered by Nitro Modules",
+  "main": "./lib/commonjs/index.js",
+  "module": "./lib/module/index.js",
+  "types": "./lib/typescript/src/index.d.ts",
+  "react-native": "src/index",
+  "source": "src/index",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "codegen": "nitrogen",
+    "build": "bob build",
+    "prepare": "npm run codegen && npm run build"
+  },
+  "keywords": [
+    "react-native",
+    "nitro",
+    "nitro-modules",
+    "qq",
+    "qq-login",
+    "qq-share",
+    "tencent"
+  ],
+  "files": [
+    "src",
+    "lib",
+    "nitrogen",
+    "nitro.json",
+    "android",
+    "ios",
+    "*.podspec",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hengkx/react-native-nitro-qq.git"
+  },
+  "author": "Tom Xu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hengkx/react-native-nitro-qq/issues"
+  },
+  "homepage": "https://github.com/hengkx/react-native-nitro-qq#readme",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "devDependencies": {
+    "@react-native/babel-preset": "0.86.0",
+    "@types/react": "19.2.2",
+    "nitrogen": "^0.37.1",
+    "react": "19.2.3",
+    "react-native": "0.86.0",
+    "react-native-builder-bob": "^0.43.2",
+    "react-native-nitro-modules": "^0.37.1",
+    "typescript": "^7.0.2"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": ">=0.76.0",
+    "react-native-nitro-modules": "*"
+  },
+  "peerDependenciesMeta": {
+    "react-native-nitro-modules": {
+      "optional": true
+    }
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.json"
+        }
+      ]
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5"
+  }
+}

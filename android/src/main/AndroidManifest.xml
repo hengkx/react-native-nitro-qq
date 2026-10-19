@@ -1,0 +1,45 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+  <queries>
+    <package android:name="com.tencent.mobileqq" />
+    <package android:name="com.tencent.tim" />
+    <intent>
+      <action android:name="android.intent.action.VIEW" />
+      <data android:scheme="mqq" />
+    </intent>
+  </queries>
+
+  <application>
+    <activity
+      android:name="com.tencent.tauth.AuthActivity"
+      android:exported="true"
+      android:launchMode="singleTask"
+      android:noHistory="true">
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <data android:scheme="tencent${qqAppId}" />
+      </intent-filter>
+    </activity>
+
+    <activity
+      android:name="com.tencent.connect.common.AssistActivity"
+      android:configChanges="orientation|keyboardHidden|screenSize"
+      android:exported="false"
+      android:screenOrientation="behind"
+      android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+    <provider
+      android:name="androidx.core.content.FileProvider"
+      android:authorities="${applicationId}.qq.fileprovider"
+      android:exported="false"
+      android:grantUriPermissions="true">
+      <meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/nitro_qq_file_paths" />
+    </provider>
+  </application>
+</manifest>

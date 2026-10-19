@@ -1,0 +1,24 @@
+{
+  "$schema": "https://nitro.margelo.com/nitro.schema.json",
+  "cxxNamespace": ["qq"],
+  "ios": {
+    "iosModuleName": "NitroQQ"
+  },
+  "android": {
+    "androidNamespace": ["qq"],
+    "androidCxxLibName": "NitroQQ"
+  },
+  "autolinking": {
+    "QQ": {
+      "ios": {
+        "language": "swift",
+        "implementationClassName": "HybridQQ"
+      },
+      "android": {
+        "language": "kotlin",
+        "implementationClassName": "HybridQQ"
+      }
+    }
+  },
+  "ignorePaths": ["**/node_modules", "**/lib"]
+}
